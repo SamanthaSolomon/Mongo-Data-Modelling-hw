@@ -5,12 +5,13 @@ const Penpal = require('../models/data-set.js');
 
 const db = mongoose.connection
 
-const index = () => {
-    Beverage.get('/person', (req, res) =>{
+const delete = () => {
+    Beverage.delete('/person/:id', (req, res) =>{
+        Beverage.splice(req.params.id, 1)
         res.json({
-            Beverage : Beverage
+            id: req.params.id
         })
     })
 }
 
-// index()
+// delete()

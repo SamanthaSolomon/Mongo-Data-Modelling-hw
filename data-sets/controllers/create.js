@@ -5,12 +5,13 @@ const Penpal = require('../models/data-set.js');
 
 const db = mongoose.connection
 
-const index = () => {
-    Beverage.get('/person', (req, res) =>{
+const create = () => {
+    Beverage.post('/person', (req, res) =>{
+        Beverage.push(req.body)
         res.json({
             Beverage : Beverage
         })
     })
 }
 
-// index()
+// create()
